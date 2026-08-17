@@ -280,54 +280,82 @@
             Remplissez le formulaire pour demander un rendez-vous.
         </p>
 
-        <form>
+       <form action="https://formspree.io/f/xjybaplb" method="POST">
 
-            <label for="nom">
-                Votre nom
-            </label>
+          <label for="nom">
+    Votre nom
+</label>
 
-            <input
-                type="text"
-                id="nom"
-                placeholder="Votre nom">
+<input
+    type="text"
+    id="nom"
+    name="nom"
+    placeholder="Votre nom"
+    required>
 
+<label for="telephone">
+    Votre téléphone
+</label>
 
-            <label for="service">
-                Choisissez un service
-            </label>
+<input
+    type="tel"
+    id="telephone"
+    name="telephone"
+    placeholder="06 12 34 56 78"
+    required>
 
-            <select id="service">
+<label for="service">
+    Choisissez un service
+</label>
 
-                <option>
-                    Coupe homme — 20 €
-                </option>
+<select id="service" name="service" required>
 
-                <option>
-                    Coupe + barbe — 30 €
-                </option>
+    <option value="">
+        Choisissez un service
+    </option>
 
-                <option>
-                    Coupe enfant — 15 €
-                </option>
+    <option>
+        Coupe homme — 20 €
+    </option>
 
-            </select>
+    <option>
+        Coupe + barbe — 30 €
+    </option>
 
+    <option>
+        Coupe enfant — 15 €
+    </option>
 
-            <label for="date">
-                Date souhaitée
-            </label>
+</select>
 
-            <input
-                type="date"
-                id="date">
+<label for="date">
+    Date souhaitée
+</label>
 
+<input
+    type="date"
+    id="date"
+    name="date"
+    required>
+
+<label for="heure">
+    Heure souhaitée
+</label>
+
+<input
+    type="time"
+    id="heure"
+    name="heure"
+    required>
 
             <button type="submit">
                 📅 Demander un rendez-vous
             </button>
 
         </form>
-
+    
+    <p id="confirmation"></p>
+ 
     </section>
 
 
@@ -361,7 +389,59 @@
         </p>
 
     </section>
+    <script>
 
+    const formulaire = document.querySelector(".reservation form");
+    const confirmation = document.getElementById("confirmation");
+
+    formulaire.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const donnees = new FormData(formulaire);
+
+        try {
+
+            const reponse = await fetch(formulaire.action, {
+                method: "POST",
+                body: donnees,
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
+            if (reponse.ok) {
+
+                confirmation.textContent =
+                    "✅ Votre demande a bien été envoyée !";
+
+                confirmation.style.color = "#16803c";
+                confirmation.style.fontWeight = "bold";
+                confirmation.style.marginTop = "20px";
+
+                formulaire.reset();
+
+            } else {
+
+                confirmation.textContent =
+                    "❌ Une erreur est survenue. Veuillez réessayer.";
+
+                confirmation.style.color = "#c62828";
+
+            }
+
+        } catch (erreur) {
+
+            confirmation.textContent =
+                "❌ Impossible d'envoyer la demande.";
+
+            confirmation.style.color = "#c62828";
+
+        }
+
+    });
+
+</script>
 </body>
 
 </html>
