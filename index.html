@@ -2,187 +2,365 @@
 <html lang="fr">
 
 <head>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #faf8f3;
-        color: #222;
-    }
 
-    header {
-        background-color: #17130d;        
-        color: white;
-        text-align: center;
-        padding: 60px 20px;
-    }
-
-    h1 {
-        font-size: 45px;
-        margin-bottom: 10px;
-    }
-
-    h2 {
-        margin-top: 40px;
-    }
-
-    section {
-        max-width: 800px;
-        margin: auto;
-        padding: 30px 20px;
-    }
-
-    .service {
-    background-color: white;
-    padding: 25px;
-    margin: 20px 0;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s;
-    }
-
-    .service:hover {
-    transform: translateY(-5px);
-    }    
-    .bouton {
-    display: inline-block;
-    background-color: #c9a227;
-    color: white;
-    padding: 15px 25px;
-    margin-top: 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    }
-    .apropos {
-    text-align: center;
-    }
-
-    .apropos p {
-    font-size: 18px;
-    line-height: 1.7;
-    }
-    .galerie {
-    text-align: center;
-    }
-
-    .photos {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    }@media (max-width: 600px) {
-
-    .photos img {
-        width: 100%;
-        max-width: 350px;
-        height: 220px;
-    }
-
-    h1 {
-        font-size: 35px;
-    }
-
-    header {
-        padding: 45px 15px;
-    }
-}
-
-    .photos img {
-    width: 250px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 15px;
-    }
-</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Lucas Coiffure</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #faf8f3;
+            color: #222;
+        }
+
+        header {
+            background-color: #17130d;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        /* BOUTON PRINCIPAL */
+
+        .bouton {
+            display: inline-block;
+            background-color: #c9a227;
+            color: white;
+            padding: 15px 25px;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* À PROPOS */
+
+        .apropos {
+            text-align: center;
+        }
+
+        .apropos p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* GALERIE */
+
+        .galerie {
+            text-align: center;
+        }
+
+        .photos {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .photos img {
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* SERVICES */
+
+        .service {
+            background-color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+        }
+
+        /* RÉSERVATION */
+
+        .reservation {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .reservation form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .reservation label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .reservation input,
+        .reservation select {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .reservation button {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #c9a227;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .reservation button:hover {
+            background-color: #a8871d;
+        }
+
+        /* VERSION TÉLÉPHONE */
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 35px;
+            }
+
+            header {
+                padding: 45px 15px;
+            }
+
+            .photos img {
+                width: 100%;
+                max-width: 350px;
+                height: 220px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
+    <!-- ACCUEIL -->
+
     <header>
 
-    <h1>✂️ Lucas Coiffure</h1>
+        <h1>✂️ Lucas Coiffure</h1>
 
-    <h2>Votre style, notre passion</h2>
+        <h2>Votre style, notre passion</h2>
 
-    <p>
-        Des coupes modernes et adaptées à votre style.
-    </p>
-<a href="tel:0600000000" class="bouton">
-    📞 Prendre rendez-vous
-</a>
-</header>
+        <p>
+            Des coupes modernes et adaptées à votre style.
+        </p>
 
-<section class="apropos">
+        <a href="tel:0600000000" class="bouton">
+            📞 Prendre rendez-vous
+        </a>
 
-    <h2>À propos de Lucas Coiffure</h2>
+    </header>
 
-    <p>
-        Depuis plusieurs années, Lucas Coiffure accompagne
-        ses clients avec passion et attention.
-        Notre objectif : vous offrir une coupe qui vous ressemble
-        dans une ambiance chaleureuse et moderne.
-    </p>
 
-</section>
+    <!-- À PROPOS -->
+
+    <section class="apropos">
+
+        <h2>À propos de Lucas Coiffure</h2>
+
+        <p>
+            Depuis plusieurs années, Lucas Coiffure accompagne
+            ses clients avec passion et attention.
+            Notre objectif : vous offrir une coupe qui vous ressemble
+            dans une ambiance chaleureuse et moderne.
+        </p>
+
+    </section>
+
+
+    <!-- GALERIE -->
+
     <section class="galerie">
 
-    <h2>Notre univers</h2>
+        <h2>Notre univers</h2>
 
-    <div class="photos">
+        <div class="photos">
 
-        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df" alt="Salon de coiffure">
+            <img
+                src="https://images.unsplash.com/photo-1562322140-8baeececf3df"
+                alt="Salon de coiffure">
 
-        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f" alt="Coiffeur">
+            <img
+                src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f"
+                alt="Coiffeur">
 
-        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a" alt="Coupe de cheveux">
-    </div>
+            <img
+                src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a"
+                alt="Coupe de cheveux">
 
-</section>
-<section>
-    <h2>Nos services</h2>
-    <div class="service">
+        </div>
 
-        <h3>Coupe homme — 20 €</h3>
-        <p>Une coupe moderne et soignée.</p>
+    </section>
 
-    </div>
 
-    <div class="service">
-
-        <h3>Coupe + barbe — 30 €</h3>
-        <p>Une prestation complète pour un look impeccable.</p>
-
-    </div>
-
-    <div class="service">
-
-        <h3>Coupe enfant — 15 €</h3>
-        <p>Une coupe adaptée aux enfants.</p>
-
-    </div>
+    <!-- SERVICES -->
 
     <section>
 
-    <h2>Horaires</h2>
+        <h2>Nos services</h2>
 
-    <p>🕐 Mardi au vendredi : 9h00 – 19h00</p>
-    <p>🕐 Samedi : 9h00 – 17h00</p>
-    <p>🔴 Dimanche et lundi : fermé</p>
+        <div class="service">
 
-</section>
+            <h3>Coupe homme — 20 €</h3>
+
+            <p>
+                Une coupe moderne et soignée.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <h3>Coupe + barbe — 30 €</h3>
+
+            <p>
+                Une prestation complète pour un look impeccable.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <h3>Coupe enfant — 15 €</h3>
+
+            <p>
+                Une coupe adaptée aux enfants.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- RÉSERVATION -->
+
+    <section class="reservation">
+
+        <h2>Prendre rendez-vous</h2>
+
+        <p>
+            Remplissez le formulaire pour demander un rendez-vous.
+        </p>
+
+        <form>
+
+            <label for="nom">
+                Votre nom
+            </label>
+
+            <input
+                type="text"
+                id="nom"
+                placeholder="Votre nom">
+
+
+            <label for="service">
+                Choisissez un service
+            </label>
+
+            <select id="service">
+
+                <option>
+                    Coupe homme — 20 €
+                </option>
+
+                <option>
+                    Coupe + barbe — 30 €
+                </option>
+
+                <option>
+                    Coupe enfant — 15 €
+                </option>
+
+            </select>
+
+
+            <label for="date">
+                Date souhaitée
+            </label>
+
+            <input
+                type="date"
+                id="date">
+
+
+            <button type="submit">
+                📅 Demander un rendez-vous
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- HORAIRES -->
 
     <section>
 
-    <h2>Nous contacter</h2>
+        <h2>Horaires</h2>
 
-    <p>📍 12 rue de la République, Mulhouse</p>
-    <p>📞 06 00 00 00 00</p>
+        <p>🕐 Mardi au vendredi : 9h00 – 19h00</p>
 
-</section>
+        <p>🕐 Samedi : 9h00 – 17h00</p>
+
+        <p>🔴 Dimanche et lundi : fermé</p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section>
+
+        <h2>Nous contacter</h2>
+
+        <p>
+            📍 12 rue de la République, Mulhouse
+        </p>
+
+        <p>
+            📞 06 00 00 00 00
+        </p>
+
+    </section>
 
 </body>
 
